@@ -1,4 +1,6 @@
-username admin secret Mypass
+username admin secret Mypass                              old methud
+username admin algorithm-type sha256 secret MyPassword    new methud
+
 
 (config)# ip domain-name resaa.net
 (config)# crypto key generate rsa
@@ -7,11 +9,13 @@ username admin secret Mypass
 (config-line)# privilege level 15
 (config-line)#login local
 transport input ssh
+(config)#ip ssh version 2
 
 (config)#line console 0
 (config-line)# privilege level 15
 (config-line)#login local
-(config)#ip ssh version 2
 
 (config)#interface vlan 1
 ip address 192.168.20.200 255.255.255.0
+
+(config)# ip default-gateway 192.168.1.1
