@@ -1,0 +1,2 @@
+#hash password
+username admin algorithm-type sha256 secret MyPassword
