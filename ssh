@@ -1,0 +1,17 @@
+username admin secret Mypass
+
+(config)# ip domain-name resaa.net
+(config)# crypto key generate rsa
+
+(config)#line vty 0
+(config-line)# privilege level 15
+(config-line)#login local
+transport input ssh
+
+(config)#line console 0
+(config-line)# privilege level 15
+(config-line)#login local
+(config)#ip ssh version 2
+
+(config)#interface vlan 1
+ip address 192.168.20.200 255.255.255.0
