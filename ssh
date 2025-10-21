@@ -7,6 +7,8 @@ username admin algorithm-type sha256 secret MyPassword    new methud
 
 (config)#line vty 0
 (config-line)# privilege level 15
+enable secret Mypass
+
 (config-line)#login local
 transport input ssh
 (config)#ip ssh version 2
